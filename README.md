@@ -8,13 +8,13 @@
 The Pima Indians Diabetes Dataset comprises 768 patient records, with 8 feature variables and 1 target variable. The features include: Pregnancies, Glucose (plasma glucose concentration), BloodPressure (diastolic blood pressure, mm Hg), SkinThickness (triceps skin fold thickness, mm), Insulin (2-hour serum insulin, mu U/ml), BMI (Body Mass Index), DiabetesPedigreeFunction (diabetes pedigree function), and Age. The target variable, Outcome, is binary, where 0 indicates no diabetes and 1 indicates diabetes. The dataset has 268 positive cases (Outcome=1, ~34.9%) and 500 negative cases (~65.1%), indicating slight class imbalance. Feature ranges vary significantly, e.g., Age spans 21 to 81 years, and Pregnancies ranges from 0 to 17.
 
 ### Feature Distribution
-![image](https://github.com/user-attachments/assets/6d806b83-e6b9-475b-92c6-99a825d1fb42)
+![d92a73fd-b3b8-4127-b138-46d85859e4b7](https://github.com/user-attachments/assets/ee84479b-9661-40fd-844f-de43e358d1b8)
 
 Histograms of feature distributions (blue represents frequency) reveal distinct patterns. Pregnancies follows a discrete distribution, and Age is slightly right-skewed. Notably, SkinThickness and Insulin exhibit abnormal peaks at 0, indicating missing values.
 From the histograms, Pregnancies and Outcome are discrete, with Pregnancies peaking at 0 and Outcome limited to 0/1. Other features are continuous, with Glucose, BloodPressure, and BMI showing approximately normal or mildly skewed distributions (e.g., BMI concentrates between 25–40). SkinThickness and Insulin have high-frequency peaks at 0 due to missing values recorded as 0. For instance, Insulin has 374 zero values (~48.7%), and BloodPressure has 35. These zeros are not valid and require preprocessing to avoid bias.
 
 ### Feature Correlation
-![image](https://github.com/user-attachments/assets/fce33682-9764-4861-86c9-1c152d2c24a5)
+![8ecf546c-5b1c-4e8b-9d5a-c4e287040f21](https://github.com/user-attachments/assets/be930e46-abec-4f1d-b64b-8e1b7180c12e)
 
 A correlation heatmap (Pearson correlation coefficient) visualizes relationships between variables. Darker colors indicate stronger correlations, with blue for positive and yellow for negative correlations. The Outcome row/column shows correlations with the target.
 The heatmap reveals moderate-to-low correlations among features. Notable relationships include SkinThickness and BMI (correlation ~0.54), indicating a strong positive link, and Age and Pregnancies (~0.54), suggesting older women tend to have more pregnancies. For Outcome, Glucose has the highest correlation (~0.49), followed by BMI, Pregnancies, and Age (~0.21–0.31), indicating higher values are associated with diabetes. BloodPressure and Insulin show weak correlations (~0.17–0.20). This suggests Glucose and BMI are key features for modeling.
